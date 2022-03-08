@@ -1,12 +1,13 @@
 #!/bin/bash
 # Get Latest CFSSL version
-
+# curl -L https://raw.githubusercontent.com/ziozzang/provision_base/main/scripts/install_cfssl.sh | bash
 
 
 get_latest_github_repo_release() {
+
   curl --silent "https://api.github.com/repos/$1/releases/latest" | # Get latest release from GitHub api
     grep '"tag_name":' |                                            # Get tag line
-    sed -E 's/.*"([^"]+)".*/\1/'                                    # Pluck JSON value
+    sed -E 's/.*"v([^"]+)".*/\1/'                                    # Pluck JSON value
 }
 
 #- Acquire Newest Version
