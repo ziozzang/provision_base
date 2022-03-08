@@ -152,7 +152,7 @@ openssl req -noout -text -in ${CERT_PATH}/domain/host_${DOMAIN_NAME}.csr
 ####################
 
 # Server Certs
-cat ${CERT_PATH}/domain/host_${DOMAIN_NAME}.pem ${CERT_PATH}/intermediate/${INT_CA}.pem
+cat ${CERT_PATH}/domain/host_${DOMAIN_NAME}.pem ${CERT_PATH}/intermediate/${INT_CA}.pem > ${CERT_PATH}/domain/domain_${DOMAIN_NAME}.pem
 # Server Keys
-cat ${CERT_PATH}/domain/host_${DOMAIN_NAME}-key.pem
+cat ${CERT_PATH}/domain/host_${DOMAIN_NAME}-key.pem > ${CERT_PATH}/domain/domain_${DOMAIN_NAME}.key
 
